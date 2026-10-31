@@ -31,10 +31,22 @@ Team: Alon Feldman and Maayan Bortz.
 but the scratch LSTM held up best on unseen sources. In-domain accuracy alone is not enough
 evidence of robust AI-music detection, and calibrated, cost-aware thresholds matter.
 
+## From design to results
+The project started with a design review (`docs/design_review.pdf`) that set the module
+structure, the two architecture families and a hypothesis: a temporal model would beat a
+spectral CNN. What changed along the way:
+- **Hypothesis:** confirmed in-domain (the MERT temporal model was best on SONICS), but the
+  external test showed the scratch LSTM generalized best.
+- **Cost framing:** the proposal prioritized precision. The final evaluation weighted missed
+  AI tracks 5x more, matching the compliance and royalty risk platforms actually face.
+- **Sampling:** a flat clip pool was replaced with song-level sampling to avoid correlated clips
+  and leakage.
+
 ## Repository
 - `data_preparation.ipynb`: data download, song-level split and 10-second segmentation
 - `real_vs_ai_music_detection.ipynb`: main pipeline (dataset, models, training, HPO,
   evaluation, reporting), with outputs
+- `docs/design_review.pdf`: initial design review (proposal before training)
 - `docs/final_report.pdf`: full project report
 - `docs/presentation.pdf`: project presentation
 
