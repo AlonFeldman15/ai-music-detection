@@ -5,7 +5,7 @@ data it has never seen? This project compares three PyTorch models on 10-second 
 under a cost-sensitive objective, then stress-tests them on external datasets.
 
 Deep Learning course final project, M.Sc., Tel Aviv University (2026).
-Team: Alon Feldman and Maayan Bortz.
+Team: [Alon Feldman](https://github.com/AlonFeldman15) and [Maayan Bortz](https://github.com/maayanbortz).
 
 ## Highlights
 - **Data:** 9,879 songs from the SONICS dataset (5,000 real, 4,879 AI-generated), resampled to
